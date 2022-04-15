@@ -7,18 +7,21 @@ import { HomeComponent } from './admin/home/home.component';
 import { NavbarComponent } from './admin/navbar/navbar.component';
 import { FooterComponent } from './admin/footer/footer.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ListroomComponent } from './admin/room/listroom/listroom.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    ListroomComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
