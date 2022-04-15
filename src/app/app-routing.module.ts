@@ -7,7 +7,10 @@ import { ListroomComponent } from './admin/room/listroom/listroom.component';
 const routes: Routes = [
   {
     path: 'admin',
-    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+    component: HomeComponent,
+    children: [
+      { path: 'list', component: ListroomComponent }
+    ]
   }
 ];
 

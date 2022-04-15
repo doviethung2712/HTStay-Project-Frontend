@@ -4,7 +4,7 @@ import { ListroomComponent } from './room/listroom/listroom.component';
 
 
 const routes: Routes = [
-  {path : 'list' , component : ListroomComponent}
+  // {path : 'list' , component : ListroomComponent}
 ];
 
 @NgModule({
