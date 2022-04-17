@@ -1,0 +1,63 @@
+<div class="main mt-3">
+  <section class="signup">
+    <!-- <img src="images/signup-bg.jpg" alt=""> -->
+    <div class="container">
+      <div class="signup-content">
+        <form [formGroup]="registerForm" id="signup-form" (submit)="register()" class="signup-form">
+          <h2 class="form-title">SIGN UP</h2>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-input"
+              name="name"
+              id="name" formControllName="name"
+              placeholder="Your Name"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-input"
+              name="email"
+              id="email" formControllName="email"
+              placeholder="Your Email"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              class="form-input"
+              name="password"
+              id="password" formControllName="password"
+              placeholder="Password"
+            />
+            <span
+              toggle="#password"
+              class="zmdi zmdi-eye field-icon toggle-password"
+            ></span>
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              class="form-input"
+              name="re_password"
+              id="re_password" formControllName="confirmPassword"
+              placeholder="Confim Password"
+            />
+          </div>
+          <div class="form-group">
+            <input type="checkbox" formControllName="role_id" id="2" value="3" (change)="toggleEditable($event)" />
+            <label for="2" class="mr-3"><span></span>Host</label>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="form-submit">SIGN UP</button>
+          </div>
+        </form>
+        <p class="loginhere">
+          Have already an account ?
+          <a routerLink="/login" class="loginhere-link">SIGN IN</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</div>

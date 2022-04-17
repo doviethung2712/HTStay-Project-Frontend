@@ -7,8 +7,15 @@ import { HomeComponent } from './admin/home/home.component';
 import { NavbarComponent } from './admin/navbar/navbar.component';
 import { FooterComponent } from './admin/footer/footer.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ListroomComponent } from './admin/room/listroom/listroom.component';
+import { NavbaruserComponent } from './user/layout/navbaruser/navbaruser.component';
+import { HomeuserComponent } from './user/component/homeuser/homeuser.component';
+import { MasterComponent } from './user/master/master.component';
+import { LoginComponent } from './page/login/login.component';
+import { RegisterComponent } from './page/register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AuthInterceptor } from './_helpers/auth.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,14 +23,20 @@ import { ListroomComponent } from './admin/room/listroom/listroom.component';
     NavbarComponent,
     FooterComponent,
     SidebarComponent,
-    ListroomComponent
+    ListroomComponent,
+    NavbaruserComponent,
+    HomeuserComponent,
+    MasterComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [ { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
