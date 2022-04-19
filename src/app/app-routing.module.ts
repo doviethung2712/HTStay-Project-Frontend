@@ -1,3 +1,4 @@
+import { RoomcreateComponent } from './host/component/roomcreate/roomcreate.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './admin/home/home.component';
@@ -29,7 +30,8 @@ const routes: Routes = [
   {
     path: "host", component: MasterhostComponent,
     children: [
-      { path: 'list', component: RoomlistComponent }
+      { path: 'list', component: RoomlistComponent },
+      {path: 'create', component: RoomcreateComponent}
     ]
   },
   {

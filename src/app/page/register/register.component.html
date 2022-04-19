@@ -6,7 +6,7 @@
         <form
           [formGroup]="registerForm"
           id="signup-form"
-          (submit)="register()"
+          (ngSubmit)="register()"
           class="signup-form"
         >
           <h2 class="form-title">SIGN UP</h2>
@@ -53,22 +53,40 @@
               formControlName="confirmPassword"
               placeholder="ConfirmPassword"
             />
+            <div *ngIf="f.confirmPassword.errors" class="invalid-feedback">
+              <div *ngIf="f.confirmPassword.errors.required">
+                Confirm Password is required
+              </div>
+              <div *ngIf="f.confirmPassword.errors.mustMatch">
+                Password and confirm not match
+              </div>
+            </div>
           </div>
-          <!-- <div class="form-group">
+          <div class="form-group">
             <input
-              type="password"
+              type="text"
               class="form-input"
               name="re_password"
               id="re_password"
-              formControlName="confirmPassword"
-              placeholder="Confim Password"
+              formControlName="phone"
+              placeholder="Phone"
             />
-          </div> -->
-          <div class="form-group">
-           <input type="radio" name="role_id"  formControlName="role_id" value="3">user
-           <input type="radio" name="role_id"  formControlName="role_id" value="2">host
           </div>
           <div class="form-group">
+            <input
+              type="radio"
+              name="role_id"
+              formControlName="role_id"
+              value="3"
+            />user
+            <input
+              type="radio"
+              name="role_id"
+              formControlName="role_id"
+              value="2"
+            />host
+          </div>
+          <div class="form-group" *ngIf="registerForm.valid">
             <button type="submit" class="form-submit">SIGN UP</button>
           </div>
         </form>
