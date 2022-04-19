@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CityService } from 'src/app/service/city.service';
 import { RoomService } from 'src/app/service/room.service';
 
 @Component({
@@ -9,19 +10,24 @@ import { RoomService } from 'src/app/service/room.service';
 export class HomeuserComponent implements OnInit {
 
   listroom = [];
-  constructor(private roomService: RoomService) { }
+  listcity = [];
+  constructor(private roomService: RoomService, private cityService: CityService) { }
 
   ngOnInit() {
-    this.getAll();
+    this.getAllRoom();
+    this.getAllCity();
   }
 
-  getAll() {
+  getAllRoom() {
     this.roomService.getAllRoom().subscribe(res => {
       console.log(res);
-      // localStorage.setItem('token', res.access_token);
-      // localStorage.setItem('user', JSON.stringify(res.user));
-      
       this.listroom = res.room;
+    })
+  }
+
+  getAllCity() {
+    this.cityService.getAllCity().subscribe(res => { 
+      this.listcity = res;
     })
   }
 }

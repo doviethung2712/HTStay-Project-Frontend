@@ -1,7 +1,11 @@
 <div class="card">
   <h5 class="card-header">Featured</h5>
   <div class="card-body">
-    <form [formGroup]="createRoomForm" (ngSubmit)="createRoom()">
+    <form
+      [formGroup]="createRoomForm"
+      (ngSubmit)="createRoom()"
+      enctype="multipart/form"
+    >
       <div class="form-group">
         <label for="roomname">Room Name</label>
         <input
@@ -85,20 +89,19 @@
           formControlName="description"
         ></textarea>
       </div>
-      <!-- <div class="form-group">
-        <label for="">Price Each Day</label>
+      <div class="form-group">
+        <label for="exampleFormControlFile1">Example file input</label>
         <input
-          type="number"
-          class="form-control"
-          id="roomname"
-          formControlName="price"
-          placeholder="Price"
+          type="file"
+          class="form-control-file"
+          id="exampleFormControlFile1"
         />
-
-      </div> -->
-      <div *ngIf="createRoomForm.invalid">
-        <button class="btn btn-primary">Create</button>
       </div>
+      <div *ngIf="createRoomForm.invalid">
+        <button class="btn btn-primary mr-4">Create</button>
+        <a class="btn btn-warning" routerLink="/host/list">Back</a>
+      </div>
+      <div></div>
     </form>
   </div>
 </div>
