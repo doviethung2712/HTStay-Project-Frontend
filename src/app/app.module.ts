@@ -16,6 +16,12 @@ import { LoginComponent } from './page/login/login.component';
 import { RegisterComponent } from './page/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptor } from './_helpers/auth.interceptor';
+import { ChangepasswordComponent } from './user/component/changepassword/changepassword.component';
+import { NavbarhostComponent } from './host/layout/navbarhost/navbarhost.component';
+import { RoomlistComponent } from './host/component/roomlist/roomlist.component';
+import { RoomcreateComponent } from './host/component/roomcreate/roomcreate.component';
+import { RoomupdateComponent } from './host/component/roomupdate/roomupdate.component';
+import { MasterhostComponent } from './host/masterhost/masterhost.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +34,13 @@ import { AuthInterceptor } from './_helpers/auth.interceptor';
     HomeuserComponent,
     MasterComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ChangepasswordComponent,
+    NavbarhostComponent,
+    RoomlistComponent,
+    RoomcreateComponent,
+    RoomupdateComponent,
+    MasterhostComponent
   ],
   imports: [
     BrowserModule,

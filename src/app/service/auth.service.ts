@@ -11,11 +11,19 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(data): Observable<any> {
-    return this.http.post<any>(environment.url_api + `login`,data);
+    return this.http.post<any>(environment.url_api + `login`, data);
   }
 
   register(data): Observable<any> {
-    return this.http.post<any>(environment.url_api + `register`,data);
+    return this.http.post<any>(environment.url_api + `register`, data);
+  }
+
+  logoutUser(): Observable<any> {
+    return this.http.get<any>(environment.url_api + `admin/logout`);
+  }
+
+  changePassword(data): Observable<any> {
+    return this.http.post<any>(environment.url_api + `admin/password`, data);
   }
 
 
