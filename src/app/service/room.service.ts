@@ -14,5 +14,9 @@ export class RoomService {
     return this.http.get<any>(environment.url_api + `room`);
   }
 
+  getAllRoomHost(id: any): Observable<any> {
+    return this.http.get<any>(environment.url_api + `admin/host/${id}`);
+  }
+
 
 }

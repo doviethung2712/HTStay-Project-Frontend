@@ -18,6 +18,8 @@ export class HomeuserComponent implements OnInit {
   getAll() {
     this.roomService.getAllRoom().subscribe(res => {
       console.log(res);
+      // localStorage.setItem('token', res.access_token);
+      // localStorage.setItem('user', JSON.stringify(res.user));
       
       this.listroom = res.room;
     })

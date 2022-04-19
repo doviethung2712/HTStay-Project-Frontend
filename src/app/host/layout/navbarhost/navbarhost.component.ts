@@ -4,28 +4,23 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
-  selector: 'app-navbaruser',
-  templateUrl: './navbaruser.component.html',
-  styleUrls: ['./navbaruser.component.css']
+  selector: 'app-navbarhost',
+  templateUrl: './navbarhost.component.html',
+  styleUrls: ['./navbarhost.component.css']
 })
-export class NavbaruserComponent implements OnInit {
-
+export class NavbarhostComponent implements OnInit {
   logoutForm: FormGroup;
   constructor(private authService: AuthService,
     private router: Router) { }
-  currentUser: any = '';
+  currentHost: any = '';
   ngOnInit() {
-    this.currentUser = JSON.parse(localStorage.getItem('user'));
-    console.log(this.currentUser);
+    this.currentHost = JSON.parse(localStorage.getItem('host'));
   }
   logout() {
     this.authService.logoutUser().subscribe(() => {
       this.router.navigate(['/login']);
-      localStorage.removeItem('user');
+      localStorage.removeItem('host');
       localStorage.removeItem('token');
     })
   }
-
-
-
 }

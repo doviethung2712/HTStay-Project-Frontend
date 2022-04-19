@@ -10,13 +10,14 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-  registerFrom: FormGroup = new FormGroup({
-    name: new FormControl(),
+  registerForm: FormGroup = new FormGroup({
+    username: new FormControl(),
     email: new FormControl(),
+    // phone: new FormControl(),
     password: new FormControl(),
     confirmPassword: new FormControl(),
     role_id: new FormControl(),
-
+    // role: new FormControl(),
   });
   contentEditable: any;
   constructor(private authService: AuthService,
@@ -24,21 +25,21 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
   }
-  toggleEditable(event) {
-    if (event.target.checked) {
-      this.contentEditable = 2;
-    }
-  }
-
 
   register() {
-    this.authService.register(this.registerFrom.value).subscribe(() => {
-      this.router.navigate(['/login']);
-      alert("Success");
-    }, () => {
+    console.log(this.registerForm.value);
+    if (this.registerForm.value.password !== this.registerForm.value.confirmPassword) {
       this.router.navigate(['/register']);
-      alert("Fail")
-    })
+    } else {
+      this.authService.register(this.registerForm.value).subscribe(() => {
+        this.router.navigate(['/login']);
+        alert("Success");
+      }, () => {
+        this.router.navigate(['/register']);
+        alert("Fail")
+      })
+    }
+
   }
 
 }

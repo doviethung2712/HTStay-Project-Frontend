@@ -3,14 +3,20 @@
     <!-- <img src="images/signup-bg.jpg" alt=""> -->
     <div class="container">
       <div class="signup-content">
-        <form [formGroup]="registerForm" id="signup-form" (submit)="register()" class="signup-form">
+        <form
+          [formGroup]="registerForm"
+          id="signup-form"
+          (submit)="register()"
+          class="signup-form"
+        >
           <h2 class="form-title">SIGN UP</h2>
           <div class="form-group">
             <input
               type="text"
               class="form-input"
               name="name"
-              id="name" formControllName="name"
+              id="name"
+              formControlName="username"
               placeholder="Your Name"
             />
           </div>
@@ -19,7 +25,8 @@
               type="email"
               class="form-input"
               name="email"
-              id="email" formControllName="email"
+              id="email"
+              formControlName="email"
               placeholder="Your Email"
             />
           </div>
@@ -28,7 +35,8 @@
               type="password"
               class="form-input"
               name="password"
-              id="password" formControllName="password"
+              id="password"
+              formControlName="password"
               placeholder="Password"
             />
             <span
@@ -40,14 +48,25 @@
             <input
               type="password"
               class="form-input"
-              name="re_password"
-              id="re_password" formControllName="confirmPassword"
-              placeholder="Confim Password"
+              name="email"
+              id="email"
+              formControlName="confirmPassword"
+              placeholder="ConfirmPassword"
             />
           </div>
+          <!-- <div class="form-group">
+            <input
+              type="password"
+              class="form-input"
+              name="re_password"
+              id="re_password"
+              formControlName="confirmPassword"
+              placeholder="Confim Password"
+            />
+          </div> -->
           <div class="form-group">
-            <input type="checkbox" formControllName="role_id" id="2" value="3" (change)="toggleEditable($event)" />
-            <label for="2" class="mr-3"><span></span>Host</label>
+           <input type="radio" name="role_id"  formControlName="role_id" value="3">user
+           <input type="radio" name="role_id"  formControlName="role_id" value="2">host
           </div>
           <div class="form-group">
             <button type="submit" class="form-submit">SIGN UP</button>
