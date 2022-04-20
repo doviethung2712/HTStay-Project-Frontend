@@ -38,12 +38,16 @@ export class RoomcreateComponent implements OnInit {
   });
   categories = [];
   cities = [];
-  statuses = [];
+  statuses = [];q
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem("user"));
     this.getAllCategory();
     this.getAllCity();
     this.getAllStatus();
+  }
+
+  get f(){
+    return this.createRoomForm.controls;
   }
 
   createRoom() {
@@ -72,4 +76,5 @@ export class RoomcreateComponent implements OnInit {
       this.statuses = res;
     });
   }
+
 }
