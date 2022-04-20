@@ -1,0 +1,45 @@
+<form [formGroup]="bookingForm" (submit)="bookingRoom()">
+  <div class="form-row">
+    <div class="col-md-6 mb-3" >
+      <label for="startDay">StartDay</label>
+      <input type="date" class="form-control" id="startDay" value="Mark" formControlName="startDay" required>
+    </div>
+    <div class="col-md-6"></div>
+    <div class="col-md-6 mb-3">
+      <label for="EndDay">EndDay</label>
+      <input type="date" class="form-control" id="EndDay" value="Otto" formControlName="endDay" required>
+    </div>
+    <div class="col-md-6"></div>
+  </div>
+  <div class="form-row">
+<!--    <div class="col-md-6 mb-3">-->
+<!--      <label for="BookingDay">BookingDay</label>-->
+<!--      <input type="date" class="form-control" id="BookingDay" formControlName="bookingDay" value="{{date|date:'YYYY-MM-dd'}}" required>-->
+<!--    </div>-->
+<!--      <div class="col-md-6"></div>-->
+    <div class="col-md-6 mb-3">
+      <label for="validationDefault05">Price</label>
+      <input type="text" class="form-control" id="validationDefault05" value="" formControlName="price" required>
+    </div>
+
+<!--    -->
+<!--    <div class="col-md-3 mb-3">-->
+<!--      <label for="validationDefault04">Price</label>-->
+<!--      <select class="custom-select" id="validationDefault04" required>-->
+<!--        <option selected disabled value="">Choose...</option>-->
+<!--        <option>...</option>-->
+<!--      </select>-->
+<!--    </div>-->
+
+
+  </div>
+<!--  <div class="form-group">-->
+<!--    <div class="form-check">-->
+<!--      <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>-->
+<!--      <label class="form-check-label" for="invalidCheck2">-->
+<!--        Agree to terms and conditions-->
+<!--      </label>-->
+<!--    </div>-->
+<!--  </div>-->
+  <button class="btn btn-primary" type="submit">Booking</button>
+</form>
