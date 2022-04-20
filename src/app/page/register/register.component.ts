@@ -27,21 +27,22 @@ export class RegisterComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private fb: FormBuilder
-  ) {}
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   get f() {
     return this.registerForm.controls;
   }
   register() {
-    console.log(this.registerForm.value);
+    // console.log(this.registerForm.value);
     if (
       this.registerForm.value.password !==
       this.registerForm.value.confirmPassword
     ) {
-      alert("Không trùng Password");
       this.router.navigate(["/register"]);
+      alert("Không trùng Password");
+      return;
     } else {
       this.authService.register(this.registerForm.value).subscribe(
         () => {

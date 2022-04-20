@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RoomService } from 'src/app/service/room.service';
 import { NavbarhostComponent } from '../../layout/navbarhost/navbarhost.component';
 
@@ -9,7 +10,12 @@ import { NavbarhostComponent } from '../../layout/navbarhost/navbarhost.componen
 })
 export class RoomlistComponent implements OnInit {
 
-  constructor(private roomService: RoomService) { }
+  constructor(
+    private roomService: RoomService,
+    private route: ActivatedRoute,
+    private router: Router) {
+
+  }
   listRoomHost = [];
   currentHost: any = "";
   ngOnInit() {
@@ -18,14 +24,26 @@ export class RoomlistComponent implements OnInit {
   }
 
   getAllRoomHosts() {
-    console.log(this.currentHost.id);
-    
     this.roomService.getAllRoomHost(this.currentHost.id).subscribe(res => {
-      console.log(res);
-
       this.listRoomHost = res.res;
     })
   }
+
+  deleteRoom(id) {
+    let x = confirm("Are you sure");
+    if (x) {
+      this.roomService.deleteRoomHost(id).subscribe(() => {
+        alert("Success!");
+        this.router.navigate(['/host/list']);
+      }, () => {
+        alert('error');
+      })
+    } else {
+      this.router.navigate(['/host/list']);
+    }
+
+  }
+
 
 
 

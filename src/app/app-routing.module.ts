@@ -10,6 +10,8 @@ import { RegisterComponent } from './page/register/register.component';
 import { ChangepasswordComponent } from './user/component/changepassword/changepassword.component';
 import { HomeuserComponent } from './user/component/homeuser/homeuser.component';
 import { MasterComponent } from './user/master/master.component';
+import { RoomupdateComponent } from './host/component/roomupdate/roomupdate.component';
+import { RoomdetailComponent } from './host/component/roomdetail/roomdetail.component';
 
 
 const routes: Routes = [
@@ -22,16 +24,18 @@ const routes: Routes = [
     ]
   },
   {
-    path: "home", component: MasterComponent,
+    path: "", component: MasterComponent,
     children: [
-      { path: 'list', component: HomeuserComponent }
+      { path: '', component: HomeuserComponent }
     ]
   },
   {
     path: "host", component: MasterhostComponent,
     children: [
       { path: 'list', component: RoomlistComponent },
-      {path: 'create', component: RoomcreateComponent}
+      { path: 'create', component: RoomcreateComponent },
+      { path: 'update/:id', component: RoomupdateComponent },
+      {path: 'detail/:id',component: RoomdetailComponent}
     ]
   },
   {

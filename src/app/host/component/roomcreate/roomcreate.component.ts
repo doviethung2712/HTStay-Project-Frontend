@@ -19,7 +19,7 @@ export class RoomcreateComponent implements OnInit {
     private categoryService: CategoryService,
     private cityService: CityService,
     private statusService: StatusService
-  ) {}
+  ) { }
   currentHost: any = "";
   createRoomForm = this.fb.group({
     name: [
@@ -34,7 +34,7 @@ export class RoomcreateComponent implements OnInit {
     description: ["", [Validators.required, Validators.maxLength(250)]],
     price: ["", [Validators.required]],
     user_id: [""],
-    status_id: ["", [Validators.required]],
+    status_id: ["", [Validators.required]]
   });
   categories = [];
   cities = [];
