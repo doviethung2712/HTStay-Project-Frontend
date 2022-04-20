@@ -1,60 +1,164 @@
-<div
-  class="container-fluid bg-primary mb-5 wow fadeIn"
-  data-wow-delay="0.1s"
-  style="padding: 35px"
->
-  <div class="row g-2">
-    <div class="col-md-10">
-      <div class="row g-2">
-        <div class="col-md-4">
-          <input
-            type="text"
-            class="form-control border-0 py-3"
-            placeholder="Search Keyword"
-          />
-        </div>
-        <div class="col-md-4">
-          <select class="form-select border-0 py-3">
-            <option selected>Property Type</option>
-            <option value="1">Property Type 1</option>
-            <option value="2">Property Type 2</option>
-            <option value="3">Property Type 3</option>
-          </select>
-        </div>
-        <div class="col-md-4">
-          <select class="form-select border-0 py-3">
-            <option selected>Location</option>
-            <option value="1">Location 1</option>
-            <option value="2">Location 2</option>
-            <option value="3">Location 3</option>
-          </select>
-        </div>
-      </div>
+
+
+<!-- <div class="container mb-4"> -->
+<div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-interval="5000">
+      <img
+        src="https://static.dezeen.com/uploads/2020/02/house-in-the-landscape-niko-arcjitect-architecture-residential-russia-houses-khurtin_dezeen_2364_hero.jpg"
+        class="d-block w-100"
+        alt="..."
+      />
     </div>
-    <div class="col-md-2">
-      <button class="btn btn-dark border-0 w-100 py-3">Search</button>
+    <div class="carousel-item" data-interval="5000">
+      <img
+        src="data:image/jpeg;base64,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"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+    <div class="carousel-item" data-interval="5000">
+      <img
+        src="https://assets.architecturaldigest.in/photos/60083e76274aca243711c3a4/16:9/w_2560%2Cc_limit/ghaziabad-uttar-pradesh-homes-photos-1366x768.jpg"
+        class="d-block w-100"
+        alt="..."
+      />
     </div>
   </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-target="#carouselExampleInterval"
+    data-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-target="#carouselExampleInterval"
+    data-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </button>
 </div>
+<!-- </div> -->
+
 <div class="row">
   <div class="col-1"></div>
   <div class="col-10">
-    <div class="card-body">
-      <h1 class="card-subtitle mb-2 text-muted">{{ room.name }}</h1>
-      <h5 class="card-title">{{ room.address }}</h5>
-      <h5 class="card-title">{{ room.categoryname }}</h5>
-      <p class="card-text">
-        {{ room.description }}
-      </p>
+    <div class="card-body mb-4">
+      <div class="row">
+        <div class="col-6">
+          <h1 class="card-subtitle mb-2 text-muted">{{ room.name }}</h1>
+        </div>
+        <div class="col-4"></div>
+        <div class="col-2">
+          <a class="btn btn-secondary text-muted">Đặt Phòng</a>
+        </div>
+      </div>
+      <h5 class="card-title">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-geo-alt-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
+          />
+        </svg>
+        {{ room.address }}
+      </h5>
+      <h5 class="card-title">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-house-heart"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.707L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.646a.5.5 0 0 0 .708-.707L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207l-5-5-5 5V13.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7.207Zm-5-.225C9.664 5.309 13.825 8.236 8 12 2.175 8.236 6.336 5.309 8 6.982Z"
+          />
+        </svg>
+        {{ room.categoryname }}
+      </h5>
+      <h6 class="text-header">
+        {{ room.bathroom }} phòng tắm · {{ room.bedroom }} phòng ngủ · 2 khách
+        (Tối đa 4 khách)
+      </h6>
+      <div>
+        <p class="card-text" style="width: 50%">
+          {{ room.description }}
+        </p>
+      </div>
     </div>
 
-    <div class="card-body">
-      <h1 class="card-subtitle mb-2 text-muted">Facilities</h1>
-      <h5 class="card-title">{{ room.address }}</h5>
-      <h5 class="card-title">{{ room.categoryname }}</h5>
-      <p class="card-text">
-        {{ room.description }}
-      </p>
+    <div class="card-body mt-3">
+      <!-- <h1 class="card-subtitle mb-2 text-muted">Facilities</h1> -->
+      <h3 class="card-title mt-3 mb-3">Facilities</h3>
+      <div class="ml-4" style="width: 30%;">
+        <div class="row">
+          <div class="col-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-wifi"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.444 12.444 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.448 11.448 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049z"
+              />
+              <path
+                d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.455 9.455 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.576 1.336c.206.132.48.108.653-.065zm-2.183 2.183c.226-.226.185-.605-.1-.75A6.473 6.473 0 0 0 8 9c-1.06 0-2.062.254-2.946.704-.285.145-.326.524-.1.75l.015.015c.16.16.407.19.611.09A5.478 5.478 0 0 1 8 10c.868 0 1.69.201 2.42.56.203.1.45.07.61-.091l.016-.015zM9.06 12.44c.196-.196.198-.52-.04-.66A1.99 1.99 0 0 0 8 11.5a1.99 1.99 0 0 0-1.02.28c-.238.14-.236.464-.04.66l.706.706a.5.5 0 0 0 .707 0l.707-.707z"
+              />
+            </svg>
+            Wifi
+          </div>
+          <div class="col-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-tv"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.5 13.5A.5.5 0 0 1 3 13h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zM13.991 3l.024.001a1.46 1.46 0 0 1 .538.143.757.757 0 0 1 .302.254c.067.1.145.277.145.602v5.991l-.001.024a1.464 1.464 0 0 1-.143.538.758.758 0 0 1-.254.302c-.1.067-.277.145-.602.145H2.009l-.024-.001a1.464 1.464 0 0 1-.538-.143.758.758 0 0 1-.302-.254C1.078 10.502 1 10.325 1 10V4.009l.001-.024a1.46 1.46 0 0 1 .143-.538.758.758 0 0 1 .254-.302C1.498 3.078 1.675 3 2 3h11.991zM14 2H2C0 2 0 4 0 4v6c0 2 2 2 2 2h12c2 0 2-2 2-2V4c0-2-2-2-2-2z"
+              />
+            </svg>
+            TV
+          </div>
+          <div class="col-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-displayport"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.5 7a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 1 0V8h10v.5a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-.5-.5h-11Z"
+              />
+              <path
+                d="M1 5a1 1 0 0 0-1 1v3.191a1 1 0 0 0 .553.894l1.618.81a1 1 0 0 0 .447.105H15a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H1Zm0 1h14v4H2.618L1 9.191V6Z"
+              />
+            </svg>
+            Điều hòa
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="col-1"></div>
