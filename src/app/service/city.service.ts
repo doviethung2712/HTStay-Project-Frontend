@@ -11,4 +11,8 @@ export class CityService {
   getAllCity(): Observable<any> {
     return this.http.get<any>(environment.url_api + `city`);
   }
+
+  getByIdCity(id): Observable<any> {
+    return this.http.get<any>(environment.url_api + `city/${id}`)
+  }
 }

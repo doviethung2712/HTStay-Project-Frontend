@@ -12,7 +12,12 @@ import { HomeuserComponent } from './user/component/homeuser/homeuser.component'
 import { MasterComponent } from './user/master/master.component';
 import { RoomupdateComponent } from './host/component/roomupdate/roomupdate.component';
 import { RoomdetailComponent } from './host/component/roomdetail/roomdetail.component';
+
 import {BookingComponent} from './user/component/booking/booking.component';
+
+import { ShowcityComponent } from './user/component/showcity/showcity.component';
+import { UserdetailComponent } from './user/component/userdetail/userdetail.component';
+
 
 
 const routes: Routes = [
@@ -27,16 +32,18 @@ const routes: Routes = [
   {
     path: "", component: MasterComponent,
     children: [
-      { path: '', component: HomeuserComponent }
+      { path: '', component: HomeuserComponent },
+      { path: 'city/:id', component: ShowcityComponent },
+      { path: 'citydetail/:id',component: UserdetailComponent}
     ]
   },
   {
     path: "host", component: MasterhostComponent,
     children: [
-      { path: 'list', component: RoomlistComponent },
+      { path: '', component: RoomlistComponent },
       { path: 'create', component: RoomcreateComponent },
       { path: 'update/:id', component: RoomupdateComponent },
-      {path: 'detail/:id',component: RoomdetailComponent}
+      { path: 'detail/:id', component: RoomdetailComponent }
     ]
   },
   {

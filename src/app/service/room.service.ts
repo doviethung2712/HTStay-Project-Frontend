@@ -36,4 +36,8 @@ export class RoomService {
   deleteRoomHost(id): Observable<any> {
     return this.http.delete<any>(environment.url_api + `user/room/${id}`);
   }
+
+  detailHome(id): Observable<any> {
+    return this.http.get<any>(environment.url_api + `detailroom/${id}`);
+  }
 }

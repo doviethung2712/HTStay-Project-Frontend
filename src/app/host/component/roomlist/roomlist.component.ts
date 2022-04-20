@@ -17,14 +17,14 @@ export class RoomlistComponent implements OnInit {
 
   }
   listRoomHost = [];
-  currentHost: any = "";
+  currentUser: any = "";
   ngOnInit() {
-    this.currentHost = JSON.parse(localStorage.getItem('host'));
+    this.currentUser = JSON.parse(localStorage.getItem('user'));
     this.getAllRoomHosts();
   }
 
   getAllRoomHosts() {
-    this.roomService.getAllRoomHost(this.currentHost.id).subscribe(res => {
+    this.roomService.getAllRoomHost(this.currentUser.id).subscribe(res => {
       this.listRoomHost = res.res;
     })
   }

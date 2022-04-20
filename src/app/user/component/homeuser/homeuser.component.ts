@@ -27,6 +27,8 @@ export class HomeuserComponent implements OnInit {
 
   getAllCity() {
     this.cityService.getAllCity().subscribe(res => { 
+      console.log(res);
+      
       this.listcity = res;
     })
   }

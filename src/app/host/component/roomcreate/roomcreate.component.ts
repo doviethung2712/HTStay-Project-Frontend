@@ -20,7 +20,7 @@ export class RoomcreateComponent implements OnInit {
     private cityService: CityService,
     private statusService: StatusService
   ) { }
-  currentHost: any = "";
+  currentUser: any = "";
   createRoomForm = this.fb.group({
     name: [
       "",
@@ -38,20 +38,24 @@ export class RoomcreateComponent implements OnInit {
   });
   categories = [];
   cities = [];
-  statuses = [];
+  statuses = [];q
   ngOnInit() {
-    this.currentHost = JSON.parse(localStorage.getItem("host"));
+    this.currentUser = JSON.parse(localStorage.getItem("user"));
     this.getAllCategory();
     this.getAllCity();
     this.getAllStatus();
   }
 
+  get f(){
+    return this.createRoomForm.controls;
+  }
+
   createRoom() {
     const room = this.createRoomForm.value;
-    room.user_id = this.currentHost.id;
+    room.user_id = this.currentUser.id;
     console.log(room);
     this.roomService.createRoomHost(room).subscribe(() => {
-      this.router.navigate(["/host/list"]);
+      this.router.navigate(["/host"]);
     });
   }
 
@@ -72,4 +76,5 @@ export class RoomcreateComponent implements OnInit {
       this.statuses = res;
     });
   }
+
 }

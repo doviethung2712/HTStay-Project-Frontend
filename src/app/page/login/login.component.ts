@@ -38,8 +38,8 @@ export class LoginComponent implements OnInit {
           this.router.navigate(["/admin"]);
         } else if (res.user.role_id == 2) {
           localStorage.setItem("token", res.access_token);
-          localStorage.setItem("host", JSON.stringify(res.user));
-          this.router.navigate(["/host/list"]);
+          localStorage.setItem("user", JSON.stringify(res.user));
+          this.router.navigate(["/host"]);
         } else {
           localStorage.setItem("token", res.access_token);
           localStorage.setItem("user", JSON.stringify(res.user));
