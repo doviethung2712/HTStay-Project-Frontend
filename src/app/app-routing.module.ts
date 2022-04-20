@@ -12,6 +12,7 @@ import { HomeuserComponent } from './user/component/homeuser/homeuser.component'
 import { MasterComponent } from './user/master/master.component';
 import { RoomupdateComponent } from './host/component/roomupdate/roomupdate.component';
 import { RoomdetailComponent } from './host/component/roomdetail/roomdetail.component';
+import {BookingComponent} from './user/component/booking/booking.component';
 
 
 const routes: Routes = [
@@ -47,7 +48,8 @@ const routes: Routes = [
   {
     path: "register", component: RegisterComponent
   },
-  { path: "", component: MasterComponent }
+  { path: "", component: MasterComponent },
+  {path: "booking", component: BookingComponent}
 ];
 
 @NgModule({
