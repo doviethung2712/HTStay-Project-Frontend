@@ -26,6 +26,8 @@ import { RoomdetailComponent } from './host/component/roomdetail/roomdetail.comp
 import { UserdetailComponent } from './user/component/userdetail/userdetail.component';
 import { ShowcityComponent } from './user/component/showcity/showcity.component';
 import { BookingComponent } from './user/component/booking/booking.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -57,10 +59,11 @@ import { BookingComponent } from './user/component/booking/booking.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    // NgbModule,
 
 
   ],
-  providers: [ { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

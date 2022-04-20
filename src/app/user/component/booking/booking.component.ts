@@ -5,6 +5,7 @@ import { StatusService } from '../../../service/status.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from '../../../service/category.service';
 import { DatePipe } from '@angular/common';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-booking',
@@ -15,12 +16,16 @@ export class BookingComponent implements OnInit {
 
   id = +this.route.snapshot.paramMap.get('id');
   currentUser: any = '';
-  showroom = '';
+  showroom: any = '';
+  
   constructor(private bookingService: BookingService,
     private router: Router,
     private route: ActivatedRoute,
-    private fb: FormBuilder) {
+    private fb: FormBuilder,
+    private modalService: NgbModal) {
   }
+
+  
   bookingForm = this.fb.group({
     "startDay": ["", [Validators.required]],
     "endDay": ["", [Validators.required]]
@@ -33,6 +38,9 @@ export class BookingComponent implements OnInit {
       this.showroom = room;
     })
   }
+  get f() {
+    return this.bookingForm.controls;
+  }
 
   calculateDay() {
     let startDay = this.bookingForm.value.startDay
@@ -44,33 +52,19 @@ export class BookingComponent implements OnInit {
       endDay.getDate()) - Date.UTC(startDay.getFullYear(), startDay.getMonth(), startDay.getDate())) / (1000 * 60 * 60 * 24));
 
   }
-
+  
 
   bookingRoom() {
     const totalDay = this.calculateDay();
-
     const totalPrice = this.showroom.price * totalDay;
     console.log(totalPrice);
-
-
 
     const bookingForm = this.bookingForm.value;
     bookingForm.user_id = this.currentUser.id;
     bookingForm.status_id = 2;
     bookingForm.room_id = this.showroom.id;
+    bookingForm.price = totalPrice;
     console.log(this.bookingForm.value);
-
-
-
-
-
-
-
-
-
-    const number = this.bookingForm.value.endDay - this.bookingForm.value.startDay;
-    // console.log(number);
-
 
     this.bookingService.booking(this.bookingForm.value).subscribe(res => {
       alert(1);

@@ -16,10 +16,10 @@ export class NavbarhostComponent implements OnInit {
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem('user'));
   }
-  
+
   logout() {
     this.authService.logoutUser().subscribe(() => {
-      this.router.navigate(['/login']);
+      this.router.navigate(['']);
       localStorage.removeItem('user');
       localStorage.removeItem('token');
     })

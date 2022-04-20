@@ -20,7 +20,7 @@ export class NavbaruserComponent implements OnInit {
   }
   logout() {
     this.authService.logoutUser().subscribe(() => {
-      this.router.navigate(['/login']);
+      this.router.navigate(['']);
       localStorage.removeItem('admin');
       localStorage.removeItem('user');
       localStorage.removeItem('token');

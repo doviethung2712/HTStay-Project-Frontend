@@ -26,6 +26,8 @@ export class RoomlistComponent implements OnInit {
   getAllRoomHosts() {
     this.roomService.getAllRoomHost(this.currentUser.id).subscribe(res => {
       this.listRoomHost = res.res;
+      console.log(this.listRoomHost);
+
     })
   }
 
@@ -33,13 +35,12 @@ export class RoomlistComponent implements OnInit {
     let x = confirm("Are you sure");
     if (x) {
       this.roomService.deleteRoomHost(id).subscribe(() => {
-        this.router.navigate(['/host/list']);
-        alert("Success!");
+        this.getAllRoomHosts();
       }, () => {
         alert('error');
       })
     } else {
-      this.router.navigate(['/host/list']);
+      this.router.navigate(['/host']);
     }
 
   }

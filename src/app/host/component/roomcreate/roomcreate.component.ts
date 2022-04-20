@@ -39,6 +39,8 @@ export class RoomcreateComponent implements OnInit {
   categories = [];
   cities = [];
   statuses = [];
+  file: File = null;
+  url: any;
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem("user"));
     this.getAllCategory();
@@ -53,10 +55,20 @@ export class RoomcreateComponent implements OnInit {
   createRoom() {
     const room = this.createRoomForm.value;
     room.user_id = this.currentUser.id;
+    room.image = this.url;
     console.log(room);
     this.roomService.createRoomHost(room).subscribe(() => {
       this.router.navigate(["/host"]);
     });
+  }
+
+  onChange(event) {
+    const urlSize = URL.createObjectURL(event.target.files[0]);
+
+    console.log(urlSize);
+
+
+    this.url = urlSize
   }
 
   getAllCategory() {
