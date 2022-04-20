@@ -23,6 +23,8 @@ import { RoomcreateComponent } from './host/component/roomcreate/roomcreate.comp
 import { RoomupdateComponent } from './host/component/roomupdate/roomupdate.component';
 import { MasterhostComponent } from './host/masterhost/masterhost.component';
 import { RoomdetailComponent } from './host/component/roomdetail/roomdetail.component';
+import { UserdetailComponent } from './user/component/userdetail/userdetail.component';
+import { ShowcityComponent } from './user/component/showcity/showcity.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,9 @@ import { RoomdetailComponent } from './host/component/roomdetail/roomdetail.comp
     RoomcreateComponent,
     RoomupdateComponent,
     MasterhostComponent,
-    RoomdetailComponent
+    RoomdetailComponent,
+    UserdetailComponent,
+    ShowcityComponent
   ],
   imports: [
     BrowserModule,

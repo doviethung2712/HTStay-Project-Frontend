@@ -33,8 +33,8 @@ export class RoomlistComponent implements OnInit {
     let x = confirm("Are you sure");
     if (x) {
       this.roomService.deleteRoomHost(id).subscribe(() => {
-        alert("Success!");
         this.router.navigate(['/host/list']);
+        alert("Success!");
       }, () => {
         alert('error');
       })
