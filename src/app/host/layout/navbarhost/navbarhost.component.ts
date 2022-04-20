@@ -12,14 +12,15 @@ export class NavbarhostComponent implements OnInit {
   logoutForm: FormGroup;
   constructor(private authService: AuthService,
     private router: Router) { }
-  currentHost: any = '';
+  currentUser: any = '';
   ngOnInit() {
-    this.currentHost = JSON.parse(localStorage.getItem('host'));
+    this.currentUser = JSON.parse(localStorage.getItem('user'));
   }
+  
   logout() {
     this.authService.logoutUser().subscribe(() => {
       this.router.navigate(['/login']);
-      localStorage.removeItem('host');
+      localStorage.removeItem('user');
       localStorage.removeItem('token');
     })
   }

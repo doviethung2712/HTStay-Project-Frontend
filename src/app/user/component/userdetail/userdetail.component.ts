@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RoomService } from 'src/app/service/room.service';
 
 @Component({
   selector: 'app-userdetail',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserdetailComponent implements OnInit {
 
-  constructor() { }
+  id = +this.route.snapshot.paramMap.get('id');
+  room = [];
+  constructor(private roomService: RoomService,
+    private route: ActivatedRoute,
+    router: Router) { }
 
   ngOnInit() {
+    this.showRoom();
   }
+
+  showRoom() {
+    this.roomService.detailHome(this.id).subscribe(res => {
+      console.log(res);
+
+      this.room = res;
+    })
+  }
+
 
 }
