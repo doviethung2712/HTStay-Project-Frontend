@@ -12,4 +12,8 @@ export class BookingService {
   booking(data):Observable<any>{
     return this.http.post(environment.url_api + `user/booking`,data);
   }
+
+  getRoom(id):Observable<any>{
+    return this.http.get(environment.url_api + `detailroom/${id}`)
+  }
 }

@@ -27,7 +27,7 @@ export class ShowcityComponent implements OnInit {
 
   getAllRoomCity() {
     this.cityService.getByIdCity(this.id).subscribe(res => {
-      console.log(res);
+      // console.log(res);
       this.listRoomCity = res
 
     })

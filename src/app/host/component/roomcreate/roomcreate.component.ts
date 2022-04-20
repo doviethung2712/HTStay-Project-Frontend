@@ -38,7 +38,7 @@ export class RoomcreateComponent implements OnInit {
   });
   categories = [];
   cities = [];
-  statuses = [];q
+  statuses = [];
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem("user"));
     this.getAllCategory();
@@ -46,7 +46,7 @@ export class RoomcreateComponent implements OnInit {
     this.getAllStatus();
   }
 
-  get f(){
+  get f() {
     return this.createRoomForm.controls;
   }
 
