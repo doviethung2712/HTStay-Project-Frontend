@@ -17,14 +17,14 @@ export class RoomlistComponent implements OnInit {
 
   }
   listRoomHost = [];
-  currentHost: any = "";
+  currentUser: any = "";
   ngOnInit() {
-    this.currentHost = JSON.parse(localStorage.getItem('host'));
+    this.currentUser = JSON.parse(localStorage.getItem('user'));
     this.getAllRoomHosts();
   }
 
   getAllRoomHosts() {
-    this.roomService.getAllRoomHost(this.currentHost.id).subscribe(res => {
+    this.roomService.getAllRoomHost(this.currentUser.id).subscribe(res => {
       this.listRoomHost = res.res;
     })
   }
@@ -33,8 +33,8 @@ export class RoomlistComponent implements OnInit {
     let x = confirm("Are you sure");
     if (x) {
       this.roomService.deleteRoomHost(id).subscribe(() => {
-        alert("Success!");
         this.router.navigate(['/host/list']);
+        alert("Success!");
       }, () => {
         alert('error');
       })

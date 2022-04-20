@@ -53,7 +53,7 @@ export class RoomupdateComponent implements OnInit {
   }
   updateRoom() {
     this.roomService.updateRoomHost(this.id, this.updateRoomHost.value).subscribe(res => {
-      this.router.navigate(['/host/list']);
+      this.router.navigate(['/host']);
       alert("Success")
     })
   }
