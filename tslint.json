@@ -1,5 +1,16 @@
 {
   "extends": "tslint:recommended",
+  "linterOptions": {
+    "exclude":
+    [
+      "config/**/*.js",
+      "src/**/**/*.tsx",
+      "src/**/**/*.ts",
+      "src/**/*.tsx",
+      "src/*.tsx"
+
+    ]
+  },
   "rules": {
     "array-type": false,
     "arrow-parens": false,

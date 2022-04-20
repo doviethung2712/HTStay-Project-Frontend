@@ -25,6 +25,9 @@ import { MasterhostComponent } from './host/masterhost/masterhost.component';
 import { RoomdetailComponent } from './host/component/roomdetail/roomdetail.component';
 import { UserdetailComponent } from './user/component/userdetail/userdetail.component';
 import { ShowcityComponent } from './user/component/showcity/showcity.component';
+import { BookingComponent } from './user/component/booking/booking.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,13 +49,16 @@ import { ShowcityComponent } from './user/component/showcity/showcity.component'
     MasterhostComponent,
     RoomdetailComponent,
     UserdetailComponent,
-    ShowcityComponent
+    ShowcityComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+
+
   ],
   providers: [ { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
