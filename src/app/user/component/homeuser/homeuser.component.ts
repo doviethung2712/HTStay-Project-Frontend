@@ -20,7 +20,7 @@ export class HomeuserComponent implements OnInit {
 
   getAllRoom() {
     this.roomService.getAllRoom().subscribe(res => {
-      console.log(res);
+      // console.log(res);
       this.listroom = res.room;
     })
   }

@@ -16,11 +16,12 @@ export class NavbaruserComponent implements OnInit {
   currentUser: any = '';
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem('user'));
-    console.log(this.currentUser);
+    // console.log(this.currentUser);
   }
   logout() {
     this.authService.logoutUser().subscribe(() => {
       this.router.navigate(['/login']);
+      localStorage.removeItem('admin');
       localStorage.removeItem('user');
       localStorage.removeItem('token');
     })

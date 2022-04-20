@@ -18,13 +18,13 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private fb: FormBuilder
-  ) {}
+  ) { }
 
   loginForm = this.fb.group({
     email: ["", [Validators.required, Validators.email]],
     password: ["", [Validators.required, Validators.minLength(6)]],
   });
-  ngOnInit() {}
+  ngOnInit() { }
 
   get f() {
     return this.loginForm.controls;
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
         } else {
           localStorage.setItem("token", res.access_token);
           localStorage.setItem("user", JSON.stringify(res.user));
-          this.router.navigate(["/home/list"]);
+          this.router.navigate([""]);
         }
       },
       (error) => {
