@@ -19,7 +19,11 @@
               formControlName="username"
               placeholder="Your Name"
             />
-            <div *ngIf="f.username.invalid && (f.username.dirty || f.username.touched)">
+            <div
+              *ngIf="
+                f.username.invalid && (f.username.dirty || f.username.touched)
+              "
+            >
               <div *ngIf="f.username.errors">
                 <div *ngIf="f.username.errors.required">
                   <small class="form-text text-muted err">
@@ -29,7 +33,6 @@
               </div>
             </div>
           </div>
-
 
           <div class="form-group">
             <input
@@ -44,15 +47,17 @@
               <div *ngIf="f.email.errors">
                 <div *ngIf="f.email.errors.required">
                   <small class="form-text text-muted err">
-                    Email khong duoc de trong</small>
+                    Email khong duoc de trong</small
+                  >
                 </div>
                 <div *ngIf="f.email.errors.email">
-                  <small class="form-text text-muted err">Email khong dung</small>
+                  <small class="form-text text-muted err"
+                    >Email khong dung</small
+                  >
                 </div>
               </div>
             </div>
           </div>
-
 
           <div class="form-group">
             <input
@@ -63,7 +68,11 @@
               formControlName="password"
               placeholder="Password"
             />
-            <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)">
+            <div
+              *ngIf="
+                f.password.invalid && (f.password.dirty || f.password.touched)
+              "
+            >
               <div *ngIf="f.password.errors">
                 <div *ngIf="f.password.errors.required">
                   <small class="form-text text-muted err">
@@ -86,7 +95,12 @@
               formControlName="confirmPassword"
               placeholder="ConfirmPassword"
             />
-            <div *ngIf="f.confirmPassword.invalid && (f.confirmPassword.dirty || f.confirmPassword.touched)">
+            <div
+              *ngIf="
+                f.confirmPassword.invalid &&
+                (f.confirmPassword.dirty || f.confirmPassword.touched)
+              "
+            >
               <div *ngIf="f.confirmPassword.errors">
                 <div *ngIf="f.confirmPassword.errors.required">
                   <small class="form-text text-muted err">
@@ -96,7 +110,6 @@
               </div>
             </div>
           </div>
-
 
           <div class="form-group">
             <input
@@ -116,10 +129,9 @@
                 </div>
               </div>
             </div>
-          </div>       
-          <div class="form-group">
+          </div>
+          <!-- <div class="form-group"> -->
           <div class="custom-control custom-checkbox">
-
             <input
               type="radio"
               name="role_id"
@@ -127,7 +139,7 @@
               value="3"
             />User
           </div>
-            <div class="custom-control custom-radio custom-control-inline">
+          <div class="custom-control custom-radio custom-control-inline">
             <input
               type="radio"
               name="role_id"
@@ -135,7 +147,7 @@
               value="2"
             />Host
           </div>
-          <div class="form-group" *ngIf="registerForm.valid" >
+          <div class="form-group" *ngIf="registerForm.valid">
             <button type="submit" class="form-submit">SIGN UP</button>
           </div>
         </form>

@@ -61,7 +61,7 @@ import { BookingdetailComponent } from './user/component/bookingdetail/bookingde
     RoomdetailComponent,
     UserdetailComponent,
     ShowcityComponent,
-    ProfileComponent
+    ProfileComponent,
     BookingComponent,
     BookingdetailComponent
   ],

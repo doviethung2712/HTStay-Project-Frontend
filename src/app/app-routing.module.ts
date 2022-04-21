@@ -36,7 +36,7 @@ const routes: Routes = [
       { path: '', component: HomeuserComponent },
       { path: 'city/:id', component: ShowcityComponent },
       { path: 'citydetail/:id', component: UserdetailComponent },
-      { path: 'profile/:id', component: ProfileComponent }
+      { path: 'profile/:id', component: ProfileComponent },
       { path: "booking/:id", component: BookingComponent },
       { path: 'bookingdetail', component: BookingdetailComponent }
     ]

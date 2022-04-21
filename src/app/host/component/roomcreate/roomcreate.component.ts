@@ -29,9 +29,9 @@ export class RoomcreateComponent implements OnInit {
     private cityService: CityService,
     private statusService: StatusService, private storage: AngularFireStorage
   ) { }
-  currentUser : any = "";
-  createRoomForm= this.fb.group({
-    name: ["",[Validators.maxLength(120), Validators.minLength(6), Validators.required],],
+  currentUser: any = "";
+  createRoomForm = this.fb.group({
+    name: ["", [Validators.maxLength(120), Validators.minLength(6), Validators.required],],
     address: ["", [Validators.required, Validators.maxLength(250)]],
     category_id: ["", [Validators.required]],
     city_id: ["", Validators.required],
@@ -92,6 +92,7 @@ export class RoomcreateComponent implements OnInit {
     room.user_id = this.currentUser.id;
     room.image = this.imageurl;
     console.log(room);
+    // return;
     this.roomService.createRoomHost(room).subscribe(() => {
       this.router.navigate(["/host"]);
     });
