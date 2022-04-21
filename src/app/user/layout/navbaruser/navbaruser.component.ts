@@ -13,12 +13,12 @@ export class NavbaruserComponent implements OnInit {
 
   logoutForm: FormGroup;
   listcity: any = [];
+  
   constructor(private authService: AuthService,
     private router: Router, private cityService: CityService) { }
   currentUser: any = '';
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem('user'));
-    // console.log(this.currentUser);
     // this.getAllCity();
   }
 
@@ -28,6 +28,8 @@ export class NavbaruserComponent implements OnInit {
       this.listcity = res;
     })
   }
+
+
 
   logout() {
     this.authService.logoutUser().subscribe(() => {
