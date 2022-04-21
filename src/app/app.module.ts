@@ -35,6 +35,7 @@ import {
   StorageBucket
 } from "@angular/fire/storage";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BookingdetailComponent } from './user/component/bookingdetail/bookingdetail.component';
 
 
 
@@ -60,7 +61,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RoomdetailComponent,
     UserdetailComponent,
     ShowcityComponent,
-    BookingComponent
+    BookingComponent,
+    BookingdetailComponent
   ],
   imports: [
     BrowserModule,

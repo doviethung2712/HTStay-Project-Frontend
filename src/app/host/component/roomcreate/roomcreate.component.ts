@@ -7,7 +7,7 @@ import { RoomService } from "src/app/service/room.service";
 import { CityService } from "src/app/service/city.service";
 import { AngularFireStorage } from "@angular/fire/storage";
 import { Observable } from "rxjs";
-import { map, finalize } from "rxjs/operators";
+import { finalize } from "rxjs/operators";
 
 @Component({
   selector: "app-roomcreate",

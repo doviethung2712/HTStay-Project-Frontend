@@ -17,6 +17,7 @@ import { BookingComponent } from './user/component/booking/booking.component';
 
 import { ShowcityComponent } from './user/component/showcity/showcity.component';
 import { UserdetailComponent } from './user/component/userdetail/userdetail.component';
+import { BookingdetailComponent } from './user/component/bookingdetail/bookingdetail.component';
 
 
 
@@ -35,7 +36,8 @@ const routes: Routes = [
       { path: '', component: HomeuserComponent },
       { path: 'city/:id', component: ShowcityComponent },
       { path: 'citydetail/:id', component: UserdetailComponent },
-      { path: "booking/:id", component: BookingComponent }
+      { path: "booking/:id", component: BookingComponent },
+      { path: 'bookingdetail', component: BookingdetailComponent }
     ]
   },
   {

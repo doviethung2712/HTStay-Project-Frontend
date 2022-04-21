@@ -54,25 +54,15 @@
       <div class="property-item rounded overflow-hidden">
         <div class="position-relative overflow-hidden">
           <a routerLink="/citydetail/{{ roomcity.id }}"
-<<<<<<< HEAD
-            ><img class="img-fluid" src="{{ roomcity.image }}" alt=""
-          /></a>
-          <div
-            class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3"
-          ></div>
-=======
             ><img
               class="img-fluid"
               style="width: 400px; height: 300px; margin: auto; display: block"
-              src="{{roomcity.image}}"
+              src="{{ roomcity.image }}"
               alt=""
           /></a>
           <div
             class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3"
-          >
-
-          </div>
->>>>>>> a1e8953826fbf29d4599941d28077efda239081f
+          ></div>
           <div
             class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 mt-2 px-3"
           >
@@ -99,12 +89,7 @@
             >{{ roomcity.bathroom }} Bath</small
           >
 
-          <small
-            *ngIf="currentUser && currentUser.id != roomcity.id; else elseBlock"
-            class="flex-fill text-center py-2"
-          >
-            <i class="fa fa-ruler-combined text-primary me-2"><a></a></i
-          ></small>
+          <small class="flex-fill text-center py-2"><a routerLink="/citydetail/{{ roomcity.id }}">Chi Tiết</a></small>
         </div>
       </div>
     </div>
