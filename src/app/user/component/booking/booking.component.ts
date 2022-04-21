@@ -30,7 +30,6 @@ export class BookingComponent implements OnInit {
     "endDay": ["", [Validators.required]]
   })
 
-
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem("user"));
     this.bookingService.getRoom(this.id).subscribe(room => {
@@ -56,18 +55,25 @@ export class BookingComponent implements OnInit {
   bookingRoom() {
     const totalDay = this.calculateDay();
     const totalPrice = this.showroom.price * totalDay;
-    console.log(totalPrice);
-
+    // console.log(totalPrice);
     const bookingForm = this.bookingForm.value;
     bookingForm.user_id = this.currentUser.id;
     bookingForm.status_id = 2;
     bookingForm.room_id = this.showroom.id;
     bookingForm.price = totalPrice;
-    console.log(this.bookingForm.value);
+    // console.log(this.bookingForm.value);
+    return this.bookingForm.value;
 
-    this.bookingService.booking(this.bookingForm.value).subscribe(res => {
-      alert(1);
-    });
+  }
+
+  addBookingRoom() {
+    console.log(this.bookingRoom());
+    this.bookingService.booking(this.bookingRoom()).subscribe(() => {
+      alert('1');
+      this.router.navigate(['/'])
+    },  () => { alert('2') });
+
+
   }
 
 
