@@ -26,6 +26,19 @@ import { RoomdetailComponent } from './host/component/roomdetail/roomdetail.comp
 import { UserdetailComponent } from './user/component/userdetail/userdetail.component';
 import { ShowcityComponent } from './user/component/showcity/showcity.component';
 import { ProfileComponent } from './user/component/profile/profile.component';
+
+import { BookingComponent } from './user/component/booking/booking.component';
+import { AngularFireModule } from "@angular/fire";
+import { environment } from "../environments/environment";
+import {
+  AngularFireStorageModule,
+  AngularFireStorageReference,
+  AngularFireUploadTask,
+  StorageBucket
+} from "@angular/fire/storage";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BookingdetailComponent } from './user/component/bookingdetail/bookingdetail.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,14 +62,19 @@ import { ProfileComponent } from './user/component/profile/profile.component';
     UserdetailComponent,
     ShowcityComponent,
     ProfileComponent
+    BookingComponent,
+    BookingdetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
+
   ],
-  providers: [ { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

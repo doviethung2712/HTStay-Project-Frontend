@@ -204,6 +204,7 @@
           type="file"
           class="form-control-file"
           id="exampleFormControlFile1"
+          (change)="onFileSelected($event)"
         />
       </div>
       <div *ngIf="createRoomForm.invalid">

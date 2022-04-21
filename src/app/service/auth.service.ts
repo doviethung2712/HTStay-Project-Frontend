@@ -19,7 +19,7 @@ export class AuthService {
   }
 
   logoutUser(): Observable<any> {
-    return this.http.get<any>(environment.url_api + `admin/logout`);
+    return this.http.get<any>(environment.url_api + `logout`);
   }
 
   changePassword(data): Observable<any> {

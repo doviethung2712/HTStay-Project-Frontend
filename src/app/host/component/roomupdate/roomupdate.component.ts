@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { CategoryService } from 'src/app/service/category.service';
 import { CityService } from 'src/app/service/city.service';
 import { RoomService } from 'src/app/service/room.service';
 import { StatusService } from 'src/app/service/status.service';
+import { finalize } from "rxjs/operators";
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-roomupdate',
@@ -17,13 +20,15 @@ export class RoomupdateComponent implements OnInit {
   categories = [];
   cities = [];
   statuses = [];
+  file: File = null;
+  url: any;
   constructor(private fb: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
     private roomService: RoomService,
     private categoryService: CategoryService,
     private cityService: CityService,
-    private statusService: StatusService) { }
+    private statusService: StatusService, private storage: AngularFireStorage) { }
   updateRoomHost: FormGroup;
   ngOnInit() {
     this.updateRoomHost = this.fb.group({
@@ -51,8 +56,45 @@ export class RoomupdateComponent implements OnInit {
     this.getAllStatus();
 
   }
+  title = "cloudsSorage";
+  selectedFile: File = null;
+  imageurl;
+  downloadURL: Observable<string>;
+
+
+  onFileSelected(event) {
+    var n = Date.now();
+    const file = event.target.files[0];
+    const filePath = `RoomsImages/${n}`;
+    const fileRef = this.storage.ref(filePath);
+    const task = this.storage.upload(`RoomsImages/${n}`, file);
+    task
+      .snapshotChanges()
+      .pipe(
+        finalize(() => {
+          this.downloadURL = fileRef.getDownloadURL();
+          this.downloadURL.subscribe(url => {
+            if (url) {
+              this.imageurl = url;
+            }
+            console.log(this.imageurl);
+          });
+        })
+      )
+      .subscribe(url => {
+        if (url) {
+          // console.log(url);
+        }
+      });
+  }
+
+
   updateRoom() {
-    this.roomService.updateRoomHost(this.id, this.updateRoomHost.value).subscribe(res => {
+    const updateRoom = this.updateRoomHost.value;
+    updateRoom.img = this.imageurl;
+    // console.log(updateRoom);
+    // return;
+    this.roomService.updateRoomHost(this.id, updateRoom).subscribe(res => {
       this.router.navigate(['/host']);
       alert("Success")
     })
