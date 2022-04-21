@@ -2,7 +2,7 @@
   <form [formGroup]="bookingForm" (submit)="bookingRoom()">
     <div class="row">
       <div class="col-md-6 mb-3">
-        <label for="startDay">StartDay</label>
+        <label for="startDay">Start Day</label>
         <input
           type="date"
           class="form-control"
@@ -13,7 +13,7 @@
         />
       </div>
       <div class="col-md-6 mb-3">
-        <label for="EndDay">EndDay</label>
+        <label for="EndDay">End Day</label>
         <input
           type="date"
           class="form-control"
@@ -74,18 +74,18 @@
       </div>
       <div class="modal-body">
         <form [formGroup]="addBooking" (submit)="addBookingRoom()">
-          <input type="text" formControlName="startDay" />
-          <input type="text" formControlName="endDay" />
-          <input type="text" formControlName="price" />
-          <button type="submit" class="btn btn-primary">
-            OK
-          </button>
+          <h6>Hotel : {{ showroom.name }}</h6>
+          <h6>Price : {{ showroom.price }}</h6>
+          <h6>Start Day : {{ showroom.startDay }}</h6>
+          <h6>End Day : {{ showroom.endDay }}</h6>
+          <div class="row">
+            <div class="col-10"></div>
+            <div class="col-2">
+              <button type="submit" class="btn btn-primary">OK</button>
+            </div>
+          </div>
         </form>
       </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div> -->
     </div>
   </div>
 </div>

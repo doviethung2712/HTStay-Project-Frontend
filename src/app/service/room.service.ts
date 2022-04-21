@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class RoomService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getAllRoom(): Observable<any> {
     return this.http.get<any>(environment.url_api + `room`);
@@ -40,4 +40,11 @@ export class RoomService {
   detailHome(id): Observable<any> {
     return this.http.get<any>(environment.url_api + `detailroom/${id}`);
   }
+
+  ratingRoom(id): Observable<any> {
+    return this.http.get<any>(environment.url_api + `rating/${id}`)
+  }
+
+
+
 }

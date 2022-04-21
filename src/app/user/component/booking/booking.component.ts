@@ -29,6 +29,7 @@ export class BookingComponent implements OnInit {
     "startDay": ["", [Validators.required]],
     "endDay": ["", [Validators.required]]
   })
+  addBooking: FormGroup;
 
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem("user"));
@@ -61,7 +62,7 @@ export class BookingComponent implements OnInit {
     bookingForm.status_id = 2;
     bookingForm.room_id = this.showroom.id;
     bookingForm.price = totalPrice;
-    // console.log(this.bookingForm.value);
+    console.log(this.bookingForm.value);
     return this.bookingForm.value;
 
   }
