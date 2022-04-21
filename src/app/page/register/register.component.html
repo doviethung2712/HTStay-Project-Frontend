@@ -120,13 +120,19 @@
               formControlName="phone"
               placeholder="Phone"
             />
-            <div *ngIf="f.phone.invalid && (f.phone.dirty || f.phone.touched)">
-              <div *ngIf="f.phone.errors">
-                <div *ngIf="f.phone.errors.required">
-                  <small class="form-text text-muted err">
-                    Phone khong duoc de trong
-                  </small>
-                </div>
+          </div>
+          <div *ngIf="f.phone.invalid && (f.phone.dirty || f.phone.touched)">
+            <div *ngIf="f.phone.errors">
+              <div *ngIf="f.phone.errors.required">
+                <small class="form-text text-muted err">
+                  Phone khong duoc de trong
+                </small>
+              </div>
+              <!-- {{ f.phone.errors.maxLength }} -->
+              <div *ngIf="f.phone.errors.maxlength">
+                <small class="form-text text-muted err">
+                  Phone phải 10 số
+                </small>
               </div>
             </div>
           </div>
