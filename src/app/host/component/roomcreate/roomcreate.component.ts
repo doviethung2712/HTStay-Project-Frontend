@@ -18,19 +18,16 @@ export class RoomcreateComponent implements OnInit {
     private router: Router,
     private categoryService: CategoryService,
     private cityService: CityService,
-    private statusService: StatusService
+    private statusService: StatusService,
   ) { }
-  currentUser: any = "";
-  createRoomForm = this.fb.group({
-    name: [
-      "",
-      [Validators.maxLength(120), Validators.minLength(6), Validators.required],
-    ],
+  currentUser : any = "";
+  createRoomForm= this.fb.group({
+    name: ["",[Validators.maxLength(120), Validators.minLength(6), Validators.required],],
     address: ["", [Validators.required, Validators.maxLength(250)]],
     category_id: ["", [Validators.required]],
     city_id: ["", Validators.required],
-    bedroom: ["", [Validators.required, Validators.min(1)]],
-    bathroom: ["", [Validators.required, Validators.min(1)]],
+    bedroom: ["", [Validators.required]],
+    bathroom: ["", [Validators.required]],
     description: ["", [Validators.required, Validators.maxLength(250)]],
     price: ["", [Validators.required]],
     user_id: [""],
@@ -38,13 +35,15 @@ export class RoomcreateComponent implements OnInit {
   });
   categories = [];
   cities = [];
-  statuses = [];q
+  statuses = [];
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem("user"));
     this.getAllCategory();
     this.getAllCity();
     this.getAllStatus();
-  }
+  };
+
+
 
   get f(){
     return this.createRoomForm.controls;

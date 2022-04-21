@@ -25,6 +25,7 @@ import { MasterhostComponent } from './host/masterhost/masterhost.component';
 import { RoomdetailComponent } from './host/component/roomdetail/roomdetail.component';
 import { UserdetailComponent } from './user/component/userdetail/userdetail.component';
 import { ShowcityComponent } from './user/component/showcity/showcity.component';
+import { ProfileComponent } from './user/component/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,8 @@ import { ShowcityComponent } from './user/component/showcity/showcity.component'
     MasterhostComponent,
     RoomdetailComponent,
     UserdetailComponent,
-    ShowcityComponent
+    ShowcityComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

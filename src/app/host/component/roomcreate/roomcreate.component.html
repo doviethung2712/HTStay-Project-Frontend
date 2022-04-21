@@ -26,6 +26,9 @@
             </div>
           </div>
         </div>
+
+
+
         <div class="form-group" class="col">
           <label for="roomname">Address</label>
           <input
@@ -35,8 +38,19 @@
             formControlName="address"
             placeholder="Address"
           />
+          <div *ngIf="f.address.invalid && (f.address.dirty || f.address.touched)">
+            <div *ngIf="f.address.errors">
+              <div *ngIf="f.address.errors.required">
+                <small class="form-text text-muted err">
+                  Address khong duoc de trong
+                </small>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="">Room Type</label>
@@ -51,7 +65,18 @@
               {{ category.name }} - {{ category.price }}
             </option>
           </select>
+          <div *ngIf="f.category_id.invalid && (f.category_id.dirty || f.category_id.touched)">
+            <div *ngIf="f.category_id.errors">
+              <div *ngIf="f.category_id.errors.required">
+                <small class="form-text text-muted err">
+                   khong duoc de trong
+                </small>
+              </div>
+            </div>
+          </div>
         </div>
+
+
 
         <div class="form-group" class="form-group col-md-4">
           <label for="">BedRoom</label>
@@ -70,7 +95,19 @@
             <option value="9">9</option>
             <option value="10">10</option>
           </select>
+          <div *ngIf="f.bedroom.invalid && (f.bedroom.dirty || f.bedroom.touched)">
+            <div *ngIf="f.bedroom.errors">
+              <div *ngIf="f.bedroom.errors.required">
+                <small class="form-text text-muted err">
+                   khong duoc de trong
+                </small>
+              </div>
+            </div>
+          </div>
         </div>
+
+
+
         <div class="form-group" class="form-group col-md-2">
           <label for="">BathRoom</label>
           <select
@@ -81,8 +118,20 @@
             <option value="2">2</option>
             <option value="3">3</option>
           </select>
+          <div *ngIf="f.bathroom.invalid && (f.bathroom.dirty || f.bathroom.touched)">
+            <div *ngIf="f.bathroom.errors">
+              <div *ngIf="f.bathroom.errors.required">
+                <small class="form-text text-muted err">
+                   khong duoc de trong
+                </small>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+
+
       <div class="row">
         <div class="col">
           <label for="">City</label>
@@ -94,7 +143,19 @@
               {{ city.name }}
             </option>
           </select>
+          <div *ngIf="f.city_id.invalid && (f.city_id.dirty || f.city_id.touched)">
+            <div *ngIf="f.city_id.errors">
+              <div *ngIf="f.city_id.errors.required">
+                <small class="form-text text-muted err">
+                   khong duoc de trong
+                </small>
+              </div>
+            </div>
+          </div>
         </div>
+
+
+
         <div class="col">
           <label for="">Status</label>
           <select
@@ -105,6 +166,15 @@
               {{ status.name }}
             </option>
           </select>
+          <div *ngIf="f.status_id.invalid && (f.status_id.dirty || f.status_id.touched)">
+            <div *ngIf="f.status_id.errors">
+              <div *ngIf="f.status_id.errors.required">
+                <small class="form-text text-muted err">
+                   khong duoc de trong
+                </small>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -115,7 +185,19 @@
           class="form-control"
           rows="2"
         ></textarea>
+        <div *ngIf="f.description.invalid && (f.description.dirty || f.description.touched)">
+          <div *ngIf="f.description.errors">
+            <div *ngIf="f.description.errors.required">
+              <small class="form-text text-muted err">
+                Description khong duoc de trong
+              </small>
+            </div>
+          </div>
+        </div>
       </div>
+
+
+
       <div class="form-group">
         <label for="exampleFormControlFile1">Example file input</label>
         <input

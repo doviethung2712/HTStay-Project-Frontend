@@ -14,6 +14,7 @@ import { RoomupdateComponent } from './host/component/roomupdate/roomupdate.comp
 import { RoomdetailComponent } from './host/component/roomdetail/roomdetail.component';
 import { ShowcityComponent } from './user/component/showcity/showcity.component';
 import { UserdetailComponent } from './user/component/userdetail/userdetail.component';
+import { ProfileComponent } from './user/component/profile/profile.component';
 
 
 const routes: Routes = [
@@ -30,7 +31,8 @@ const routes: Routes = [
     children: [
       { path: '', component: HomeuserComponent },
       { path: 'city/:id', component: ShowcityComponent },
-      { path: 'citydetail/:id',component: UserdetailComponent}
+      { path: 'citydetail/:id', component: UserdetailComponent },
+      { path: 'profile/:id', component: ProfileComponent }
     ]
   },
   {
