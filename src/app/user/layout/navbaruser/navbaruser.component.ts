@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import { CityService } from 'src/app/service/city.service';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-navbaruser',
@@ -13,9 +14,11 @@ export class NavbaruserComponent implements OnInit {
 
   logoutForm: FormGroup;
   listcity: any = [];
-  
+
   constructor(private authService: AuthService,
-    private router: Router, private cityService: CityService) { }
+    private router: Router,
+    private cityService: CityService,
+    private userService: UserService) { }
   currentUser: any = '';
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem('user'));
@@ -36,7 +39,23 @@ export class NavbaruserComponent implements OnInit {
       localStorage.removeItem('admin');
       localStorage.removeItem('user');
       localStorage.removeItem('token');
-      this.router.navigate(['/'])
+      this.router.navigate(['/']);
+      location.reload();
+    })
+  }
+  searchForm: FormGroup = new FormGroup({
+    "price": new FormControl(),
+    "city": new FormControl(),
+    "name": new FormControl(),
+  })
+
+
+  listRoomCity = [];
+
+  search() {
+    this.userService.searchRoom(this.searchForm.value).subscribe(room => {
+      this.listRoomCity = room;
+      
     })
   }
 

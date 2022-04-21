@@ -21,7 +21,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav ms-auto">
-        <a routerLink="/host/create" class="nav-item nav-link active">Create</a>
+        <div *ngIf="currentUser.role_id == 2">
+          <a routerLink="/host/create" class="nav-item nav-link active"
+            >Create</a
+          >
+        </div>
         <!-- <a href="about.html" class="nav-item nav-link">About</a>
           <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
@@ -53,7 +57,7 @@
             currentUser.username
           }}</a>
           <div class="dropdown-menu rounded-0 m-0">
-            <a href="property-list.html" class="dropdown-item">Profile</a>
+            <a routerLink="/profile" class="dropdown-item">Profile</a>
             <a routerLink="" class="dropdown-item">Home</a>
             <a routerLink="/changepassword" class="dropdown-item"
               >Change Password</a

@@ -21,6 +21,7 @@ import { ProfileComponent } from './user/component/profile/profile.component';
 import { BookingdetailComponent } from './user/component/bookingdetail/bookingdetail.component';
 
 
+
 const routes: Routes = [
   // { path: "", component: MasterComponent },
   {
@@ -36,7 +37,7 @@ const routes: Routes = [
       { path: '', component: HomeuserComponent },
       { path: 'city/:id', component: ShowcityComponent },
       { path: 'citydetail/:id', component: UserdetailComponent },
-      { path: 'profile/:id', component: ProfileComponent },
+      { path: 'profile', component: ProfileComponent },
       { path: "booking/:id", component: BookingComponent },
       { path: 'bookingdetail', component: BookingdetailComponent }
     ]

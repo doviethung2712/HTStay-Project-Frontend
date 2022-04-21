@@ -56,19 +56,14 @@ export class BookingComponent implements OnInit {
   bookingRoom() {
     const totalDay = this.calculateDay();
     const totalPrice = this.showroom.price * totalDay;
-    // console.log(totalPrice);
     const bookingForm = this.bookingForm.value;
     bookingForm.user_id = this.currentUser.id;
     bookingForm.status_id = 2;
     bookingForm.room_id = this.showroom.id;
     bookingForm.price = totalPrice;
-
     this.showroom.startDay = this.bookingForm.value.startDay;
     this.showroom.endDay = this.bookingForm.value.endDay;
     this.showroom.totalprice = totalPrice;
-    console.log(this.showroom);
-
-    console.log(this.bookingForm.value);
     return this.bookingForm.value;
 
   }
@@ -76,9 +71,9 @@ export class BookingComponent implements OnInit {
   addBookingRoom() {
     console.log(this.bookingRoom());
     this.bookingService.booking(this.bookingRoom()).subscribe(() => {
-      alert('1');
-      this.router.navigate(['/'])
-    }, () => { alert('2') });
+      alert('Success')
+      this.router.navigate(['/bookingdetail'])
+    }, () => { alert('fail') });
 
 
   }

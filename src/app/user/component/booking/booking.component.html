@@ -44,12 +44,6 @@
     <a routerLink="" class="btn btn-danger">Cancel</a>
   </form>
 </div>
-
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button> -->
-
 <!-- Modal -->
 <div
   class="modal fade"
@@ -73,18 +67,22 @@
         </button>
       </div>
       <div class="modal-body">
-        <form [formGroup]="addBooking" (submit)="addBookingRoom()">
-          <h6>Hotel : {{ showroom.name }}</h6>
-          <h6>Total Price : {{ showroom.totalprice }}</h6>
-          <h6>Start Day : {{ showroom.startDay }}</h6>
-          <h6>End Day : {{ showroom.endDay }}</h6>
-          <div class="row">
-            <div class="col-10"></div>
-            <div class="col-2">
-              <button type="submit" class="btn btn-primary">OK</button>
-            </div>
-          </div>
-        </form>
+ 
+        <h6>Hotel : {{ showroom.name }}</h6>
+        <h6>Total Price : {{ showroom.totalprice }}</h6>
+        <h6>Start Day : {{ showroom.startDay }}</h6>
+        <h6>End Day : {{ showroom.endDay }}</h6>
+
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          (click)="addBookingRoom()"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+        >
+          OK
+        </button>
       </div>
     </div>
   </div>

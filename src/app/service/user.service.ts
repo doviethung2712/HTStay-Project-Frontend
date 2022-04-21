@@ -18,4 +18,11 @@ return this.http.get<any>(environment.url_api + `user/detail/${id}`);
   updateUser(id, data):Observable<any>{
 return this.http.put<any>(environment.url_api + `user/update/${id}`, data);
   }
+
+  searchRoom(data):Observable<any>{
+    return this.http.post<any>(environment.url_api + `search`,data);
+  }
+
+
+
 }

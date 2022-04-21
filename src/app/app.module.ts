@@ -39,6 +39,7 @@ import {
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookingdetailComponent } from './user/component/bookingdetail/bookingdetail.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +64,8 @@ import { BookingdetailComponent } from './user/component/bookingdetail/bookingde
     ShowcityComponent,
     ProfileComponent,
     BookingComponent,
-    BookingdetailComponent
+    BookingdetailComponent,
+ 
   ],
   imports: [
     BrowserModule,

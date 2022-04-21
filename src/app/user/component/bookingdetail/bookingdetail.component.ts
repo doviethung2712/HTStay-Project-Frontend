@@ -15,14 +15,11 @@ export class BookingdetailComponent implements OnInit {
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem("user"));
     this.bookingDetail();
-
   }
 
   bookingDetail() {
     this.bookingService.historyBooking(this.currentUser.id).subscribe(res => {
       this.bookingdetail = res;
-      console.log(this.bookingdetail);
-
     })
   }
 

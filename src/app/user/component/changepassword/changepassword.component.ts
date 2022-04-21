@@ -13,6 +13,7 @@ export class ChangepasswordComponent implements OnInit {
   changepasswordForm: FormGroup = new FormGroup({
     oldpassword: new FormControl(),
     newpassword: new FormControl(),
+    newconfirmpassword: new FormControl(),
   });
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -20,12 +21,15 @@ export class ChangepasswordComponent implements OnInit {
   }
 
   passwordChange() {
+    console.log(this.changepasswordForm.value);
+
     this.authService.changePassword(this.changepasswordForm.value).subscribe(res => {
       localStorage.setItem('token', res.access_token);
       localStorage.setItem('user', JSON.stringify(res.user));
-
       this.router.navigate(['/login']);
-      alert('Success');
+      alert('Thay đổi mật khẩu thành công');
+    }, () => {
+      alert('Mật khẩu cũ không khớp');
     })
   }
 
