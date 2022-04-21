@@ -5,7 +5,7 @@ import { StatusService } from '../../../service/status.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from '../../../service/category.service';
 import { DatePipe } from '@angular/common';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-booking',
@@ -17,15 +17,14 @@ export class BookingComponent implements OnInit {
   id = +this.route.snapshot.paramMap.get('id');
   currentUser: any = '';
   showroom: any = '';
-  
+
   constructor(private bookingService: BookingService,
     private router: Router,
     private route: ActivatedRoute,
-    private fb: FormBuilder,
-    private modalService: NgbModal) {
+    private fb: FormBuilder) {
   }
 
-  
+
   bookingForm = this.fb.group({
     "startDay": ["", [Validators.required]],
     "endDay": ["", [Validators.required]]
@@ -52,7 +51,7 @@ export class BookingComponent implements OnInit {
       endDay.getDate()) - Date.UTC(startDay.getFullYear(), startDay.getMonth(), startDay.getDate())) / (1000 * 60 * 60 * 24));
 
   }
-  
+
 
   bookingRoom() {
     const totalDay = this.calculateDay();
