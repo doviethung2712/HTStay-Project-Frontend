@@ -27,7 +27,7 @@
               <div *ngIf="f.username.errors">
                 <div *ngIf="f.username.errors.required">
                   <small class="form-text text-muted err">
-                    Name khong duoc de trong
+                    Name required
                   </small>
                 </div>
               </div>
@@ -47,12 +47,12 @@
               <div *ngIf="f.email.errors">
                 <div *ngIf="f.email.errors.required">
                   <small class="form-text text-muted err">
-                    Email khong duoc de trong</small
+                    Email required</small
                   >
                 </div>
                 <div *ngIf="f.email.errors.email">
                   <small class="form-text text-muted err"
-                    >Email khong dung</small
+                    >Email invalidate</small
                   >
                 </div>
               </div>
@@ -76,7 +76,7 @@
               <div *ngIf="f.password.errors">
                 <div *ngIf="f.password.errors.required">
                   <small class="form-text text-muted err">
-                    Password khong duoc de trong
+                    Password required
                   </small>
                 </div>
               </div>
@@ -104,7 +104,7 @@
               <div *ngIf="f.confirmPassword.errors">
                 <div *ngIf="f.confirmPassword.errors.required">
                   <small class="form-text text-muted err">
-                    ConfirmPassword khong duoc de trong
+                    ConfirmPassword required
                   </small>
                 </div>
               </div>
@@ -124,14 +124,12 @@
           <div *ngIf="f.phone.invalid && (f.phone.dirty || f.phone.touched)">
             <div *ngIf="f.phone.errors">
               <div *ngIf="f.phone.errors.required">
-                <small class="form-text text-muted err">
-                  Phone khong duoc de trong
-                </small>
+                <small class="form-text text-muted err"> Phone required </small>
               </div>
               <!-- {{ f.phone.errors.maxLength }} -->
               <div *ngIf="f.phone.errors.maxlength">
                 <small class="form-text text-muted err">
-                  Phone phải 10 số
+                  Phone least 10 numbers
                 </small>
               </div>
             </div>
@@ -159,7 +157,7 @@
         </form>
         <p class="loginhere">
           Have already an account ?
-          <a routerLink="/login" class="loginhere-link">SIGN IN</a> | 
+          <a routerLink="/login" class="loginhere-link">SIGN IN</a> |
           <a routerLink="" class="loginhere-link"> Back</a>
         </p>
       </div>

@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
         }
       },
       (error) => {
-        alert("Sai TK Or MK");
+        alert("Account or Password is wrong!");
         this.router.navigate(["/login"]);
       }
     );

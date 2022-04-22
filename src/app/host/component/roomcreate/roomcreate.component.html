@@ -1,5 +1,5 @@
 <div class="card">
-  <h5 class="card-header">Create</h5>
+  <h5 class="card-header">Create New Room</h5>
   <div class="card-body">
     <form
       [formGroup]="createRoomForm"
@@ -41,7 +41,7 @@
             <div *ngIf="f.address.errors">
               <div *ngIf="f.address.errors.required">
                 <small class="form-text text-muted err">
-                  Address khong duoc de trong
+                  Address required
                 </small>
               </div>
             </div>
@@ -71,7 +71,7 @@
             <div *ngIf="f.category_id.errors">
               <div *ngIf="f.category_id.errors.required">
                 <small class="form-text text-muted err">
-                  khong duoc de trong
+                  Category required
                 </small>
               </div>
             </div>
@@ -100,7 +100,7 @@
             <div *ngIf="f.bedroom.errors">
               <div *ngIf="f.bedroom.errors.required">
                 <small class="form-text text-muted err">
-                  khong duoc de trong
+                  BedRoom required
                 </small>
               </div>
             </div>
@@ -124,7 +124,7 @@
             <div *ngIf="f.bathroom.errors">
               <div *ngIf="f.bathroom.errors.required">
                 <small class="form-text text-muted err">
-                  khong duoc de trong
+                  BathRoom required
                 </small>
               </div>
             </div>
@@ -148,7 +148,7 @@
             <div *ngIf="f.city_id.errors">
               <div *ngIf="f.city_id.errors.required">
                 <small class="form-text text-muted err">
-                  khong duoc de trong
+                  City name required
                 </small>
               </div>
             </div>
@@ -172,7 +172,7 @@
             <div *ngIf="f.status_id.errors">
               <div *ngIf="f.status_id.errors.required">
                 <small class="form-text text-muted err">
-                  khong duoc de trong
+                  Status required
                 </small>
               </div>
             </div>
@@ -196,7 +196,7 @@
           <div *ngIf="f.description.errors">
             <div *ngIf="f.description.errors.required">
               <small class="form-text text-muted err">
-                Description khong duoc de trong
+                Description required
               </small>
             </div>
           </div>
@@ -204,7 +204,7 @@
       </div>
 
       <div class="form-group">
-        <label for="exampleFormControlFile1">Example file input</label>
+        <label for="exampleFormControlFile1">Room Image</label>
         <input
           type="file"
           class="form-control-file"

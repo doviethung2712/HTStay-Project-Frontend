@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
       this.registerForm.value.confirmPassword
     ) {
       this.router.navigate(["/register"]);
-      alert("Không trùng Password");
+      alert("Password are not matching");
       return;
     } else {
       this.authService.register(this.registerForm.value).subscribe(
