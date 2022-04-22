@@ -36,10 +36,8 @@ export class NavbaruserComponent implements OnInit {
 
   logout() {
     this.authService.logoutUser().subscribe(() => {
-      localStorage.removeItem('admin');
       localStorage.removeItem('user');
       localStorage.removeItem('token');
-      this.router.navigate(['/']);
       location.reload();
     })
   }
@@ -49,16 +47,12 @@ export class NavbaruserComponent implements OnInit {
     "name": new FormControl(),
   })
 
-
   listRoomCity = [];
-
   search() {
     this.userService.searchRoom(this.searchForm.value).subscribe(room => {
       this.listRoomCity = room;
-      
+
     })
   }
-
-
 
 }
