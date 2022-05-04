@@ -91,7 +91,7 @@ export class RoomcreateComponent implements OnInit {
     const room = this.createRoomForm.value;
     room.user_id = this.currentUser.id;
     room.image = this.imageurl;
-    console.log(room);
+    // console.log(room);
     // return;
     this.roomService.createRoomHost(room).subscribe(() => {
       this.router.navigate(["/host"]);

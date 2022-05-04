@@ -52,7 +52,7 @@
         </ng-template>
       </div>
       <div *ngIf="currentUser; else elseBlock">
-        <div *ngIf="currentUser.id == 2; else block">
+        <div *ngIf="currentUser.role_id == 2; else block">
           <div class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{
               currentUser.username

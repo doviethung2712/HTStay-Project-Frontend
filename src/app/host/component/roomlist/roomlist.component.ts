@@ -26,7 +26,7 @@ export class RoomlistComponent implements OnInit {
   getAllRoomHosts() {
     this.roomService.getAllRoomHost(this.currentUser.id).subscribe(res => {
       this.listRoomHost = res.res;
-      console.log(this.listRoomHost);
+      // console.log(this.listRoomHost);
 
     })
   }

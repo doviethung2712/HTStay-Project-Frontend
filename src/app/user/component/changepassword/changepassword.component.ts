@@ -27,9 +27,9 @@ export class ChangepasswordComponent implements OnInit {
       localStorage.setItem('token', res.access_token);
       localStorage.setItem('user', JSON.stringify(res.user));
       this.router.navigate(['/login']);
-      alert('Thay đổi mật khẩu thành công');
+      alert('Password changed successfully');
     }, () => {
-      alert('Mật khẩu cũ không khớp');
+      alert('Password are not match');
     })
   }
 
